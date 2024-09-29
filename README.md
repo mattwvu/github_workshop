@@ -13,13 +13,13 @@ This workshop covers essential concepts of version control, collaboration, and p
   Jeff focuses on student success and science-based instructional support at WVU Libraries.
 
 ### Workshop Agenda:
-1. **Introduction to Version Control**
-2. **Overview of Git, GitHub, and GitHub Desktop**
-3. **Setting up GitHub Desktop**
-4. **Creating and Cloning Repositories**
-5. **Adding and Committing Changes**
-6. **Branching and Merging**
-7. **Collaboration and Project Management**
+1. Introduction to Version Control
+2. Overview of Git, GitHub, and GitHub Desktop
+3. Setting up GitHub Desktop
+4. Creating and Cloning Repositories
+5. Adding and Committing Changes
+6. Branching and Merging
+7. Collaboration and Project Management
 
 ## Key Resources:
 - [O’Reilly Learning Platform](https://databases.lib.wvu.edu/connect/1540334373)
