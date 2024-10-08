@@ -1,0 +1,351 @@
+---
+title: "GITHUB ESSENTIALS FOR CODING AND VERSION CONTROL"
+author: "Matt Steele"
+format: 
+  revealjs:
+    theme: white
+    transition: slide
+editor: visual
+execute: 
+  eval: false
+---
+
+```{r}
+#| label: working_directory
+#| echo: true
+#| include: false
+
+setwd("C:/Users/Matt/Documents/R_Projects/github_workshop/presentation")
+
+```
+
+## Welcome
+
+-   [Matt Steele](https://directory.lib.wvu.edu/employee/210/)
+-   [Data Services Workshops](https://wvu.libcal.com/calendar/researchcommons?cid=9552&t=g&d=0000-00-00&cal=9552&ct=59746&inc=0)
+
+## Resources
+
+-   [O'Reilly Learning Platform](https://databases.lib.wvu.edu/connect/1540334373)
+
+-   [Start Your Journey - GitHub](https://docs.github.com/en/get-started/start-your-journey)
+
+-   [GIT](https://git-scm.com/)
+
+-   [GITHUB](https://github.com/)
+
+-   [GITHUB DESKTOP](https://desktop.github.com)
+
+## Why Use GitHub
+
+-   Track Changes
+-   Collaborate
+-   Backup and remote access
+-   Branching and Test Environments
+-   Open-Sources
+-   Integration and Testing
+
+## Agenda
+
+-   Version Control
+-   Overview of Git, GitHub, and GitHub Desktop.
+-   Setting up GitHub Desktop
+-   Creating and Cloning a Repository
+-   Adding files to a Repository
+-   Branching and Merging
+-   Collaboration and Project Management
+
+## Version Control
+
+-   Records changes to a file or set of files over time
+-   Tracks and manages changes in code or documents
+-   Allows collaboration without overwriting previous work
+-   Easy recovery if something goes wrong
+-   View the entire lifecycle of a project
+
+::: notes
+Version Control Overview: Start by explaining that version control systems are like "save points" in a project, ensuring that you never lose track of changes. These systems allow teams or individuals to collaborate without fear of overwriting each other's work.
+
+Tracking and Managing: Emphasize that version control is not just for code---it's for any kind of file, whether it's text, images, or scripts. The ability to track who made what changes, when, and why, adds accountability and transparency.
+
+Benefits: Elaborate on the benefits, especially collaboration. In a team setting, version control allows multiple people to contribute to the same project simultaneously. Additionally, history tracking and recovery make it easy to fix mistakes and review the evolution of the project.
+
+Wide Adoption: Mention that it's a standard in software development but increasingly important in other fields like research, academic writing, and even personal projects. The need for version control grows as projects become more complex and collaborative.
+:::
+
+## What is GIT
+
+Git is a distributed version control system that tracks changes in files, allowing multiple people to collaborate on a project while maintaining a complete history of revisions.
+
+<img src="git.png" alt="git" width="25%"/>
+
+<https://git-scm.com/>
+
+## What is GITHUB
+
+GitHub is a cloud-based platform that hosts Git repositories, enabling collaboration, version control, and project management for developers and teams.
+
+<img src="github.png" alt="github" width="25%"/>
+
+<https://github.com/>
+
+## What is GITHUB DESKTOP
+
+GitHub Desktop is a user-friendly graphical interface that simplifies the use of Git and GitHub without requiring command-line knowledge.
+
+<img src="github.png" alt="github" width="25%"/>
+
+<https://desktop.github.com>
+
+## Configure Github Desktop
+
+1.  Open Github Desktop
+2.  File \> Options (PC) \|\|\| GitHub Desktop \> Preferences (MAC)
+3.  Sign in to GitHub
+4.  Integrations
+5.  GIT
+
+## Create a Repository
+
+::: r-fit-text
+1.  File \> Create New Repository
+2.  Name: Give your repository a meaningful name that reflects the project.
+3.  Description: Optionally, provide a brief description of the repository's purpose.
+4.  Local Path: Choose the directory on your computer where the repository will be stored. You can create a new folder if desired.
+5.  Initialize This Repository with a README: Check this box to automatically create a README file.
+6.  Git Ignore Template: If your project involves specific files to ignore (e.g., log files, build files), you can choose a Git Ignore template.
+7.  License: Optionally, select a license for your repository, especially if it will be shared publicly.
+8.  Publish: When your repository is ready, go ahead and PUBLISH it
+:::
+
+## ReadME file
+
+provides an overview of a project, typically including:
+
+1.  Project Title: Clear and descriptive.
+2.  Description: Brief summary of the project and its purpose.
+3.  Installation Instructions: Steps to install and set up the project locally.
+4.  Usage: How to run or use the project.
+5.  Contributing: Guidelines for contributing to the project.
+6.  License: Information about the project's license.
+
+[Markdown Syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+
+## Activity: Create a ReadME File
+
+1.  Click on Add a Readme in your Repository in GitHub.com
+2.  Past the following markdown code
+
+<br>
+
+```{r}
+#| label: readme_text
+#| eval: false
+#| echo: true
+
+# My Python Dice Game
+
+This is a **simple Python** program that simulates rolling a variety of dice used in tabletop games like [Dungeons & Dragons](https://dndstore.wizards.com/us/en).
+
+
+
+```
+
+## Create a New File on GitHub.com
+
+1.  Click on Add File
+2.  Name File - dice_roll.csv
+3.  Paste into file
+
+```{r}
+#| label: dice_roll.csv
+#| eval: false
+#| echo: true
+
+Roll_ID,Dice_Type,Num_Rolls,Modifier,Rolls,Total
+1,d20,1,2,[18],20
+2,d6,3,-1,[4, 2, 5],10
+3,d8,2,0,[6, 3],9
+4,d10,4,1,[7, 9, 5, 6],28
+5,d20,1,-2,[12],10
+
+
+```
+
+## Create a New File on Computer
+
+1.  Navigate to the repository folder on your computer.
+    -   Click on Show in Explorer (PC)
+    -   Click on Show in Finder (MAC)
+2.  Create a New File
+    -   Click on the Start menu and type "Notepad" in the search bar. (PC)
+    -   Open Finder and type "TextEdit" in the search bar. (MAC)
+
+## Activity: Create a Python Script
+
+::: r-fit-text
+1.  Copy and Paste the code into Notepad of TextEditor - for MAC -- *go to the "Format" menu at the top and select "Make Plain Text" or use the shortcut Shift + Command + T*
+2.  Save file as dice_roll.py to the folder for your repository
+
+<br>
+
+```{python}
+#| label: dice_roll_game
+#| eval: false
+#| echo: true
+
+import random
+
+def roll_dice(num_dice=1, num_sides=6):
+    """Simulates rolling 'num_dice' dice with 'num_sides' sides."""
+    return [random.randint(1, num_sides) for _ in range(num_dice)]
+
+# Example: Rolling 2 six-sided dice
+rolls = roll_dice(num_dice=2)
+print("Rolled dice:", rolls)
+
+```
+:::
+
+::: notes
+attach the file into chat for anyone having issues
+:::
+
+## Activity: Commit Changes
+
+1.  Open GitHub Desktop
+2.  Staging Changes - select the files to change
+3.  Committing Changes - add message
+4.  Commit to \_\_\_\_
+5.  Push Origin
+
+::: notes
+Explain the importance of clear commit messages for understanding project history and collaborating with others.
+
+In Git, push origin refers to the command used to upload (push) local repository changes to the remote repository (referred to as origin).
+:::
+
+## Branches
+
+branches allow developers to work on features or fixes in isolation without affecting the main codebase. The default branch is usually called main or master.
+
+1.  Click on the Current Branch dropdown at the top of the application.
+2.  Select New Branch from the dropdown menu.
+3.  Enter a name for the branch (e.g., dnd_test) and click Create Branch.
+
+## Activity: Create a New Branch
+
+::: r-fit-text
+1.  Create a new branch
+2.  Select dnd_test branch on Github.com
+3.  Edit dice_roll.py file
+
+<br>
+
+```{python}
+#| label: dnd_dice_roll
+#| eval: false
+#| echo: true
+
+import random
+
+def roll_dnd_dice(dice_type='d20', num_rolls=1, modifier=0):
+    """Rolls a D&D-style dice (e.g., 'd6', 'd20') a number of times with an optional modifier."""
+    
+    # Extract the number of sides from the dice type (e.g., 'd6' -> 6)
+    sides = int(dice_type[1:])
+    
+    # Roll the dice the specified number of times and sum the results
+    rolls = [random.randint(1, sides) for _ in range(num_rolls)]
+    
+    # Sum up the rolls and add the modifier
+    total = sum(rolls) + modifier
+    
+    # Display the individual rolls and the total
+    print(f"Rolls: {rolls}")
+    if modifier != 0:
+        print(f"Modifier: {modifier}")
+    print(f"Total: {total}")
+    return total
+
+# Example: Rolling 2d20 with a +3 modifier
+roll_dnd_dice('d20', num_rolls=2, modifier=3)
+
+```
+:::
+
+## Pull Requests
+
+A pull request is a way to propose changes to a repository. It allows contributors to review and discuss code changes before integrating them into the main codebase.
+
+The repository owner or team members can then approve, request changes, or reject the pull request.
+
+## Merge Branches
+
+1.  Switch to branch you want to merge into
+2.  Go to the top menu and click Branch \> Merge into Current Branch.
+
+## View History
+
+The History tab is essential for tracking project evolution, reviewing past changes, and collaborating effectively within teams by providing a clear and accessible view of the repository's commit history.
+
+## Cloning a Repository
+
+The History tab is essential for tracking project evolution, reviewing past changes, and collaborating effectively within teams by providing a clear and accessible view of the repository's commit history.
+
+*Activity*: Create a clone of <https://github.com/rfordatascience/tidytuesday>
+
+## Forking a Repository
+
+Forking creates a copy of a repository in your own GitHub account. It allows you to make changes to the project without affecting the original repository.
+
+## Adding Collaborators
+
+You can granted access to users which will allow them to contribute to a GitHub repository. They can help manage and enhance the project by making code contributions, suggesting changes, and collaborating on development tasks.
+
+## Activity: Collaborate on a Repository
+
+::: r-fit-text
+1.  Enter your GitHub username in chat
+2.  Accept invitation at Github.com under Repositories
+3.  **One Volunteer**: Add file to repository
+4.  Push Origin
+5.  Click New Pull Request
+
+```{python}
+#| label: dnd_dice_roll_w_csv
+#| eval: false
+#| echo: true
+
+import pandas as pd
+
+# Read the dataset
+df = pd.read_csv('data/dice_rolls.csv')
+
+# Display the dataset
+print(df)
+
+# Example: Calculate the average total roll for each dice type
+avg_total_by_dice_type = df.groupby('Dice_Type')['Total'].mean()
+print("\nAverage Total by Dice Type:")
+print(avg_total_by_dice_type)
+
+# Example: Count the number of rolls per dice type
+count_by_dice_type = df['Dice_Type'].value_counts()
+print("\nCount of Rolls by Dice Type:")
+print(count_by_dice_type)
+
+```
+:::
+
+## Project Management
+
+A GitHub Project is a tool that enables teams to manage and track their work within a GitHub repository. It provides a structured way to organize tasks, features, and issues, facilitating collaboration and project management.
+
+1.  Click **Projects** tab
+2.  Start New Project
+
+## Conclusion
+
+-   [Matt Steele](https://directory.lib.wvu.edu/employee/210/)
+-   [Data Services Workshops](https://wvu.libcal.com/calendar/researchcommons?cid=9552&t=g&d=0000-00-00&cal=9552&ct=59746&inc=0)
